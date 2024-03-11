@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const gallery = document.querySelector('.gallery');
+export const gallery = document.querySelector('.gallery');
 
 const getImgList = images => {
   return images
@@ -33,10 +33,8 @@ const getImgList = images => {
     .join('');
 };
 
-export const renderImages = imgList => {
-  gallery.innerHTML = '';
+export const renderImages = imgList =>
   gallery.insertAdjacentHTML('beforeend', getImgList(imgList));
-};
 
 gallery.addEventListener('click', e => {
   e.preventDefault();

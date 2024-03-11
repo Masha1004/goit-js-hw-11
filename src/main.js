@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { fetchImages } from './js/pixabay-api';
-import { renderImages } from './js/render-functions';
+import { gallery, renderImages } from './js/render-functions';
 
 const searchForm = document.querySelector('.js-form');
 const button = document.querySelector('button');
@@ -17,6 +17,7 @@ const getErrorMessage = (message, messageColor) =>
 
 searchForm.addEventListener('submit', evt => {
   evt.preventDefault();
+  gallery.innerHTML = '';
   const value = evt.currentTarget.elements['js-input'].value;
 
   if (value) {
